@@ -4,6 +4,7 @@
 
 require_once get_stylesheet_directory().'/inc/bellashop-template-hooks.php';
 require_once get_stylesheet_directory().'/inc/bellashop-template-functions.php';
+require_once get_stylesheet_directory().'/inc/widgets/class-bellashop-widget-price-filter.php';
 
 function bellashop_enqueue_styles()
 {
@@ -21,9 +22,10 @@ function bellashop_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'bellashop_enqueue_styles', 30);
 
-function remove_price_filter_widget()
+function replace_price_filter_widget()
 {
     unregister_widget('WC_Widget_Price_Filter');
+    register_widget('WC_Bellashop_Widget_Price_Filter');
 }
 
-// add_action('widgets_init', 'remove_price_filter_widget');
+add_action('widgets_init', 'replace_price_filter_widget');
