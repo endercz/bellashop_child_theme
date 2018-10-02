@@ -15,9 +15,9 @@ function bellashop_enqueue_styles()
     wp_enqueue_style('vendor-style', get_stylesheet_directory_uri().'/css/vendor.min.css', array($parent_style), wp_get_theme()->get('Version'));
 
     // $in_footer = true;
-    // wp_register_script('unishop-script', get_stylesheet_directory_uri().'/js/scripts.js', array('jquery'), $in_footer);
+    wp_register_script('unishop-script', get_stylesheet_directory_uri().'/js/myscripts.js', array('jquery'), $in_footer);
     // wp_register_script('vendor-script', get_stylesheet_directory_uri().'/js/vendor.min.js', array('jquery'), $in_footer);
-    // wp_enqueue_script('unishop-script');
+    wp_enqueue_script('unishop-script');
     // wp_enqueue_script('vendor-script');
 }
 add_action('wp_enqueue_scripts', 'bellashop_enqueue_styles', 30);
