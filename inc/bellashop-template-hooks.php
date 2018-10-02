@@ -18,6 +18,8 @@ function bellashop_header()
     remove_action('storefront_header', 'storefront_primary_navigation_wrapper_close', 68);
     remove_action('storefront_header', 'storefront_primary_navigation', 50);
     remove_action('storefront_header', 'storefront_header_cart', 60);
+
+    add_action('storefront_header', 'bellashop_primary_navigation', 50);
 }
 /// BELLASHOP HEADER
 /////////////////////////////////////////////////////

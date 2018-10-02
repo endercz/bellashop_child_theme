@@ -47,3 +47,36 @@ function add_topbar()
     </div>
     <?php
 }
+
+/////////////////////////////////////////////////////
+/// BELLASHOP HEADER
+if (!function_exists('bellashop_primary_navigation')) {
+    /**
+     * Display Primary Navigation.
+     *
+     * @since  1.0.0
+     */
+    require_once get_stylesheet_directory().'/inc/bellashop_nav_menu_walker.php';
+    function bellashop_primary_navigation()
+    {
+        ?>
+      <!-- Navigation Menu -->
+      <header class="navbar navbar-sticky">
+        <nav class="site-menu">
+          <ul>
+            <?php
+              $args = array(
+                'theme_location' => 'primary',
+                'container' => false,
+                'items_wrap' => '%3$s',
+                'walker' => new Bellashop_Nav_Walker(),
+              );
+
+        wp_nav_menu($args); ?>
+          </ul>
+        </nav>
+		<?php
+    }
+}
+/// BELLASHOP HEADER
+/////////////////////////////////////////////////////
