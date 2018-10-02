@@ -92,18 +92,24 @@ class WC_Bellashop_Widget_Price_Filter extends WC_Widget
         $min_price = isset($_GET['min_price']) ? wc_clean(wp_unslash($_GET['min_price'])) : apply_filters('woocommerce_price_filter_widget_min_amount', $min); // WPCS: input var ok, CSRF ok.
         $max_price = isset($_GET['max_price']) ? wc_clean(wp_unslash($_GET['max_price'])) : apply_filters('woocommerce_price_filter_widget_max_amount', $max); // WPCS: input var ok, CSRF ok.
 
-        echo '<form method="get" action="'.esc_url($form_action).'">
+        echo '<form class="price-range-slider" method="get" action="'.esc_url($form_action).'">
 			<div class="price_slider_wrapper">
 				<div class="price_slider" style="display:none;"></div>
 				<div class="price_slider_amount">
 					<input type="text" id="min_price" name="min_price" value="'.esc_attr($min_price).'" data-min="'.esc_attr(apply_filters('woocommerce_price_filter_widget_min_amount', $min)).'" placeholder="'.esc_attr__('Min price', 'woocommerce').'" />
-					<input type="text" id="max_price" name="max_price" value="'.esc_attr($max_price).'" data-max="'.esc_attr(apply_filters('woocommerce_price_filter_widget_max_amount', $max)).'" placeholder="'.esc_attr__('Max price', 'woocommerce').'" />
-					<button type="submit" class="button">'.esc_html__('Filter', 'woocommerce').'</button>
-					<div class="price_label" style="display:none;">
-						'.esc_html__('Price:', 'woocommerce').' <span class="from"></span> &mdash; <span class="to"></span>
-					</div>
-					'.wc_query_string_form_fields(null, array('min_price', 'max_price'), '', true).'
-					<div class="clear"></div>
+                    <input type="text" id="max_price" name="max_price" value="'.esc_attr($max_price).'" data-max="'.esc_attr(apply_filters('woocommerce_price_filter_widget_max_amount', $max)).'" placeholder="'.esc_attr__('Max price', 'woocommerce').'" />
+                    <footer class="ui-range-slider-footer">
+                        <div class="column">
+                            <button type="submit" class="btn btn-outline-primary btn-sm">'.esc_html__('Filter', 'woocommerce').'</button>
+                        </div>
+                        <div class="column">
+                            <div class="price_label" style="display:none;">
+                                <span class="from"></span> &mdash; <span class="to"></span>
+                            </div>
+                            '.wc_query_string_form_fields(null, array('min_price', 'max_price'), '', true).'
+                        </div>
+                        <div class="clear"></div>
+                    </footer>
 				</div>
 			</div>
 		</form>'; // WPCS: XSS ok.
