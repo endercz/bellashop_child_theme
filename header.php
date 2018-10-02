@@ -22,7 +22,7 @@
 <div id="page" class="hfeed site">
 	<?php do_action('bellashop_before_header'); ?>
 
-	<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
+	<header id="masthead" class="site-header navbar navbar-sticky" role="banner" style="<?php storefront_header_styles(); ?>">
 
 		<?php
 /**
@@ -41,7 +41,7 @@
  * @hooked storefront_primary_navigation_wrapper_close - 68
  */
         do_action('storefront_header'); ?>
-
+        
 	</header><!-- #masthead -->
 
 	<?php

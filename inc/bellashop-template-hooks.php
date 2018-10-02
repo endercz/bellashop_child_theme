@@ -19,6 +19,8 @@ function bellashop_header()
     remove_action('storefront_header', 'storefront_primary_navigation', 50);
     remove_action('storefront_header', 'storefront_header_cart', 60);
 
+    remove_action('storefront_header', 'storefront_product_search', 40);
+
     add_action('storefront_header', 'bellashop_primary_navigation', 50);
 }
 /// BELLASHOP HEADER

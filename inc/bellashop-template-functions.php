@@ -61,7 +61,7 @@ if (!function_exists('bellashop_primary_navigation')) {
     {
         ?>
       <!-- Navigation Menu -->
-      <header class="navbar navbar-sticky">
+      <!-- <header class="navbar navbar-sticky"> -->
         <nav class="site-menu">
           <ul>
             <?php
