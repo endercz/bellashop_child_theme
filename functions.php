@@ -29,3 +29,6 @@ function replace_price_filter_widget()
 }
 
 add_action('widgets_init', 'replace_price_filter_widget');
+
+// bellashop header
+add_action('init', 'bellashop_header');
