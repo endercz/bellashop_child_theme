@@ -10,7 +10,7 @@ function bellashop_header()
 {
     remove_action('storefront_header', 'storefront_header_container', 0);
     remove_action('storefront_header', 'storefront_skip_links', 5);
-    remove_action('storefront_header', 'storefront_site_branding', 20);
+    // remove_action('storefront_header', 'storefront_site_branding', 20);
     remove_action('storefront_header', 'storefront_secondary_navigation', 30);
     remove_action('storefront_header', 'storefront_header_container_close', 41);
     remove_action('storefront_header', 'storefront_primary_navigation_wrapper', 42);

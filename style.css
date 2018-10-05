@@ -2130,3 +2130,9 @@ button.menu-toggle::after {
   width: 16px;
   height: 16px;
 }
+
+.custom-logo-link {
+  width: 154px !important;
+  padding: 12px 0 12px 25px;
+  text-decoration: none;
+}
